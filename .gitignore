@@ -5,7 +5,7 @@ output-qemu
 *.iso
 *.box
 .kitchen
-.idea
+.idea/
 vendor
 Vagrantfile
 .vagrant/

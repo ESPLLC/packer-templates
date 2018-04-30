@@ -1,6 +1,14 @@
 Write-Host "Uninstall Chef..."
+
+# If there's a chef .msi (left by older chef versions?) use it
 if(Test-Path "c:\windows\temp\chef.msi") {
   Start-Process MSIEXEC.exe '/uninstall c:\windows\temp\chef.msi /quiet' -Wait
+}
+
+# Modern chef clients should be uninstalled through 'Add/Remove Programs'
+$chef = Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -match "Chef" }
+if ($chef) {
+  $chef.uninstall()
 }
 
 Write-Host "Cleaning Temp Files"
