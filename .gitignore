@@ -5,6 +5,8 @@ output-qemu
 *.iso
 *.box
 .kitchen
+.idea
 vendor
 Vagrantfile
 .vagrant/
+Berksfile.lock
