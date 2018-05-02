@@ -71,7 +71,13 @@
         "packer-templates::set_local_account_token_filter_policy",
         "packer-templates::remove_dirs",
         "packer-templates::add_setup_complete"
-      ]
+      ],
+      "json": {
+        "credentials": {
+          "vm_username": "vagrant",
+          "vm_password": "vagrant"
+        }
+      }
     },
     {
       "type": "powershell",
