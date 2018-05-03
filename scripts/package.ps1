@@ -10,9 +10,10 @@ Update-ExecutionPolicy -Policy Unrestricted
 if (Test-Command -cmdname 'Uninstall-WindowsFeature') {
     Write-BoxstarterMessage "Removing unused features..."
     Remove-WindowsFeature -Name 'Powershell-ISE'
-    Get-WindowsFeature | 
-    ? { $_.InstallState -eq 'Available' } | 
-    Uninstall-WindowsFeature -Remove
+#     # Leave the features available for later installation
+#     Get-WindowsFeature |
+#     ? { $_.InstallState -eq 'Available' } |
+#     Uninstall-WindowsFeature -Remove
 }
 
 
