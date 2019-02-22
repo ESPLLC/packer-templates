@@ -92,6 +92,12 @@
       "script": "scripts/cleanup.ps1",
       "elevated_user": "vagrant",
       "elevated_password": "vagrant"
+    },
+    {
+      "type": "powershell",
+      "script": "scripts/autologin.ps1",
+      "elevated_user": "vagrant",
+      "elevated_password": "vagrant"
     }
   ],
   "post-processors": [
