@@ -2,8 +2,8 @@
   "variables": {
     "guest_additions_mode": "attach",
     "headless": "true",
-    "iso_checksum": "18a4f00a675b0338f3c7c93c4f131beb",
-    "iso_url": "http://care.dlservice.microsoft.com/dl/download/1/6/F/16FA20E6-4662-482A-920B-1A45CF5AAE3C/14393.0.160715-1616.RS1_RELEASE_SERVER_EVAL_X64FRE_EN-US.ISO",
+    "iso_checksum": "70721288bbcdfe3239d8f8c0fae55f1f",
+    "iso_url": "https://software-download.microsoft.com/download/pr/Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO",
     "cloud_token": "{{ env `VAGRANT_CLOUD_TOKEN` }}",
     "version": "1.0.{{timestamp}}"
   },
@@ -36,6 +36,8 @@
   "provisioners": [
     {
       "type": "chef-solo",
+      "chef_license": "accept-silent",
+      "version": "14.7.17",
       "cookbook_paths": ["cookbooks", "vendor/cookbooks"],
       "guest_os_type": "windows",
       "run_list": [
@@ -90,12 +92,6 @@
     {
       "type": "powershell",
       "script": "scripts/cleanup.ps1",
-      "elevated_user": "vagrant",
-      "elevated_password": "vagrant"
-    },
-    {
-      "type": "powershell",
-      "script": "scripts/autologin.ps1",
       "elevated_user": "vagrant",
       "elevated_password": "vagrant"
     }

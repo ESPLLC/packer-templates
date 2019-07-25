@@ -1,6 +1,6 @@
 $WinlogonPath = "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
-Set-ItemProperty -Path $WinlogonPath -Name AutoAdminLogon -Value 1
-Set-ItemProperty -Path $WinlogonPath -Name ForceAutoLogon -Value 1
+Set-ItemProperty -Path $WinlogonPath -Name AutoAdminLogon -Value "1"
+Set-ItemProperty -Path $WinlogonPath -Name ForceAutoLogon -Value "1"
 Set-ItemProperty -Path $WinlogonPath -Name DefaultUsername -Value "vagrant"
 Set-ItemProperty -Path $WinlogonPath -Name DefaultPassword -Value "vagrant"
 
