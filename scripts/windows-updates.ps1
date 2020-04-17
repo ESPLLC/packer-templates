@@ -1,3 +1,4 @@
 $ProgressPreference='SilentlyContinue'
 
-Get-WUInstall -WindowsUpdate -AcceptAll -UpdateType Software -IgnoreReboot
+Import-Module PSWindowsUpdate
+Get-WindowsUpdate -Install -WindowsUpdate -AcceptAll -UpdateType Software -IgnoreReboot
