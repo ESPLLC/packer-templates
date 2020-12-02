@@ -10,3 +10,5 @@ vendor
 Vagrantfile
 .vagrant/
 Berksfile.lock
+/packer_builds/
+/packer_cache/

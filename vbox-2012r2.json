@@ -2,7 +2,7 @@
   "variables": {
     "guest_additions_mode": "attach",
     "headless": "true",
-    "iso_checksum": "5b5e08c490ad16b59b1d9fab0def883a",
+    "iso_checksum": "sha256:6612b5b1f53e845aacdf96e974bb119a3d9b4dcb5b82e65804ab7e534dc7b4d5",
     "iso_url": "http://download.microsoft.com/download/6/2/A/62A76ABB-9990-4EFC-A4FE-C7D698DAEB96/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_EN-US-IR3_SSS_X64FREE_EN-US_DV9.ISO",
     "cloud_token": "{{ env `VAGRANT_CLOUD_TOKEN` }}",
     "version": "1.0.{{timestamp}}"
@@ -20,7 +20,6 @@
       "headless": "{{ user `headless` }}",
       "iso_url": "{{ user `iso_url` }}",
       "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "md5",
       "communicator": "winrm",
       "winrm_username": "vagrant",
       "winrm_password": "vagrant",
@@ -56,7 +55,7 @@
       {
         "type": "vagrant",
         "keep_input_artifact": true,
-        "output": "windows2012r2min-{{.Provider}}.box",
+        "output": "packer_builds/windows2012r2min-{{.Provider}}-{{user `version`}}.box",
         "vagrantfile_template": "vagrantfile-windows.template"
       },
       {
